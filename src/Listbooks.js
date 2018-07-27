@@ -38,13 +38,24 @@ class Listbooks extends Component {
             />
             }
             </div>
-            <div className
+            <div className="bookshelf">
+              <h2 className="bookshelf-title">Read</h2>
+              {read.length > 0 &&
+              <Book
+              filteredBooks={read}
+              changeShelf={this.props.changeShelf}
+            />
+            }
+            </div>
           </div>
+        </div>
+        <div className="open-search">
+          <Link to='/search'>Add a book</Link>
         </div>
       </div>
 
-    )
-
-
+    );
   }
 }
+
+export default Listbooks
