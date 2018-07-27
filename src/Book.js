@@ -18,7 +18,7 @@ class Book extends Component {
                     backgroundImage: 'url("${matchingBook.imageLinks.thumbnail}")'
                   }}>
                 <div className="book-shelf-changer">
-                  <select onChange={e => this.props.switchShelf(e, matchingBook)} value={matchingBook.shelf}>
+                  <select onChange={e => this.props.switchShelf(e, matchingBook)} value={matchingBook.bookshelf}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
@@ -33,7 +33,7 @@ class Book extends Component {
               </div>
             </div>
           </li>
-        
+
         ))}
       </ol>
     </div>
