@@ -20,10 +20,25 @@ class Searchpage extends Component {
             result.shelf = this.addShelf(result);
             return result;
           });
-          
-        }
-      })
+          this.setState({queriedBooks: queryResults});
+          }
+          else {
+            this.setState({queriedBooks: []
+            });
+          }
+      });
     }
+    else {
+      this.setState({queriedBooks: []
+      });
+    }
+    this.setState({query: query.trim()
+    });
+  };
 
-  }
+  addShelf(result) {
+    const hasShelf = this.props.books.filter(book => book.id === result.id);
+    return.hasShelf.length ? hasShelf[0].shelf : 'none';
+    }
+    
 }
