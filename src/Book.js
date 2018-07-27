@@ -32,12 +32,13 @@ class Book extends Component {
               <div className="book-authors">{matchingBook.authors}
               </div>
             </div>
-          </li>)
+          </li>
+        
         ))}
       </ol>
     </div>
    );
-    }
-  }
+ }
+}
 
 export default Book;
