@@ -45,7 +45,7 @@ class BooksApp extends React.Component {
         books: state.books
         .filter(b => b.id !=matchingBook.id)
         .concat([matchingBook])
-      }));
+      });
     });
   };
 
@@ -72,5 +72,8 @@ class BooksApp extends React.Component {
           )}
         />
       </div>
+    );
+  }
+}
 
 export default BooksApp
