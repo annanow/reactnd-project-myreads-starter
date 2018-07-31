@@ -38,14 +38,14 @@ class Searchpage extends Component {
 
   addShelf(result) {
     const hasShelf = this.props.books.filter(book => book.id === result.id);
-    return.hasShelf.length ? hasShelf[0].shelf : 'none';
+    return hasShelf.length ? hasShelf[0].shelf : 'none';
     }
 
     render() {
       return (
         <div className="search-books">
           <div className="search-books-bar">
-            <Link className="close-search" to "/">
+            <Link className="close-search" to="/">
               &gt;
               Close
             </Link>
