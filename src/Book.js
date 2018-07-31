@@ -16,9 +16,13 @@ class Book extends Component {
                     width: 128,
                     height: 193,
                     backgroundImage: 'url("${matchingBook.imageLinks.thumbnail}")'
-                  }}>
+                  }}
+                />
                 <div className="book-shelf-changer">
-                  <select onChange={e => this.props.switchShelf(e, matchingBook)} value={matchingBook.bookshelf}>
+                  <select onChange={e => this.props.switchShelf(e, matchingBook)}
+                    value={matchingBook.bookshelf}
+                    name='shelf'
+                    >
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
@@ -26,18 +30,17 @@ class Book extends Component {
                     <option value="none">None</option>
                     </select>
                 </div>
-                </div>
-                <div className="book-title">{matchingBook.title}
+              </div>
+              <div className="book-title">{matchingBook.title}
               </div>
               <div className="book-authors">{matchingBook.authors}
               </div>
             </div>
           </li>
-
-        ))}
+        )}
       </ol>
     </div>
-   );
+   )
  }
 }
 
