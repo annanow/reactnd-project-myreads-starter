@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Book extends Component {
   render() {
@@ -8,19 +8,19 @@ class Book extends Component {
       <div className="bookshelf-books">
         <ol className="books-grid">
           {matchingBooks.length > 0 &&
-            matchingBooks.map(matchingBook =>
+            matchingBooks.map(matchingBook => (
             <li key={matchingBook.id}>
               <div className="book">
                 <div className="book-top">
                   <div className="book-cover" style={{
                     width: 128,
                     height: 193,
-                    backgroundImage: 'url("${matchingBook.imageLinks.thumbnail}")'
+                    backgroundImage: `url(${matchingBook.imageLinks.thumbnail})`
                   }}
                 />
                 <div className="book-shelf-changer">
                   <select onChange={e => this.props.switchShelf(e, matchingBook)}
-                    value={matchingBook.bookshelf}
+                    value={matchingBook.shelf}
                     name='shelf'
                     >
                     <option value="move" disabled>Move to...</option>
@@ -37,7 +37,7 @@ class Book extends Component {
               </div>
             </div>
           </li>
-        )}
+        ))}
       </ol>
     </div>
    )

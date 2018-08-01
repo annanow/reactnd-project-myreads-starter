@@ -60,8 +60,8 @@ class Searchpage extends Component {
           <div className="search-books-results">
             {this.state.queriedBooks.length > 0 &&
             <Book
-            filteredBooks={this.state.queriedBooks}
-          changeShelf={this.props.changeShelf}
+            matchingBooks={this.state.queriedBooks}
+          switchShelf={this.props.switchShelf}
         />}
           </div>
         </div>

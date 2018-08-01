@@ -17,20 +17,13 @@ class BooksApp extends React.Component {
     showSearchPage: true
   }
 
-  getAllBooks=()=>{
-    this.setState({
-      loading:true
-    })
-    BooksAPI.getAll().then((books)=>{
-      this.setState({
-        books,
-        loading: false
-      })
+
+  componentDidMount() {
+    BooksAPI.getAll().then((books) => {
+      this.setState({books})
     })
   }
-  componentDidMount(){
-    this.getAllBooks()
-  }
+
 
   switchShelf = (e, matchingBook) => {
     let books = this.state.books;
@@ -41,16 +34,15 @@ class BooksApp extends React.Component {
     });
 
     BooksAPI.update(matchingBook, shelf).then(() => {
-      this.setState(state => {
+      this.setState(state => ({
         books: state.books
-        .filter(b => b.id !=matchingBook.id)
+        .filter(b => b.id !==matchingBook.id)
         .concat([matchingBook])
-      });
+      }));
     });
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="app">
         <Route

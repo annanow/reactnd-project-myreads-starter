@@ -24,8 +24,17 @@ class Listbooks extends Component {
               <h2 className = "bookshelf-title">Currently Reading</h2>
               {currentlyReading.length > 0 &&
               <Book
-              filteredBooks={currentlyReading}
-              changeShelf={this.props.changeShelf}
+              matchingBooks={currentlyReading}
+              switchShelf={this.props.switchShelf}
+            />
+            }
+            </div>
+            <div className="bookshelf">
+              <h2 className="bookshelf-title">Want to read</h2>
+              {read.length > 0 &&
+              <Book
+              matchingBooks={wantToRead}
+              switchShelf={this.props.switchShelf}
             />
             }
             </div>
@@ -33,17 +42,8 @@ class Listbooks extends Component {
               <h2 className="bookshelf-title">Read</h2>
               {read.length > 0 &&
               <Book
-              filteredBooks={wantToRead}
-              changeShelf={this.props.changeShelf}
-            />
-            }
-            </div>
-            <div className="bookshelf">
-              <h2 className="bookshelf-title">Read</h2>
-              {read.length > 0 &&
-              <Book
-              filteredBooks={read}
-              changeShelf={this.props.changeShelf}
+              matchingBooks={read}
+              switchShelf={this.props.switchShelf}
             />
             }
             </div>
