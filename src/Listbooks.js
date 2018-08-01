@@ -30,7 +30,7 @@ class Listbooks extends Component {
             }
             </div>
             <div className="bookshelf">
-              <h2 className="bookshelf-title">Want to read</h2>
+              <h2 className="bookshelf-title">Want to Read</h2>
               {read.length > 0 &&
               <Book
               matchingBooks={wantToRead}
